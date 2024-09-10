@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "37efP2NeH4rtA3Pxopkok/AgaKQku42aH/PI8z+JJL/0B8Jkn5F9zJHDSTFJEdvMmUuLQOL0ipUu5yDh56PryQ==",
+  "success": true,
+  "projectFilePath": "/Users/gfari/source/sandbox/BuberBreakfast/BuberBreakfast/BuberBreakfast.csproj",
+  "expectedPackageFiles": [
+    "/Users/gfari/.nuget/packages/microsoft.extensions.apidescription.server/6.0.5/microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
+    "/Users/gfari/.nuget/packages/microsoft.openapi/1.2.3/microsoft.openapi.1.2.3.nupkg.sha512",
+    "/Users/gfari/.nuget/packages/swashbuckle.aspnetcore/6.5.0/swashbuckle.aspnetcore.6.5.0.nupkg.sha512",
+    "/Users/gfari/.nuget/packages/swashbuckle.aspnetcore.swagger/6.5.0/swashbuckle.aspnetcore.swagger.6.5.0.nupkg.sha512",
+    "/Users/gfari/.nuget/packages/swashbuckle.aspnetcore.swaggergen/6.5.0/swashbuckle.aspnetcore.swaggergen.6.5.0.nupkg.sha512",
+    "/Users/gfari/.nuget/packages/swashbuckle.aspnetcore.swaggerui/6.5.0/swashbuckle.aspnetcore.swaggerui.6.5.0.nupkg.sha512"
+  ],
+  "logs": []
+}
