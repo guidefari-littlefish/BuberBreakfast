@@ -4,7 +4,7 @@ using BuberBreakfast.Services.Breakfasts;
 var builder = WebApplication.CreateBuilder(args);
 {
     builder.Services.AddControllers();
-    builder.Services.AddSingleton<IBreakfastService, BreakfastService>();
+    builder.Services.AddScoped<IBreakfastService, BreakfastService>();
 }
 
 // Add services to the container.
@@ -12,6 +12,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 var app = builder.Build();
 {
+    app.UseExceptionHandler("/error");
     app.UseMiddleware<RequestResponseLoggingMiddleware>();
     app.UseHttpsRedirection();
     app.MapControllers();
