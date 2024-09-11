@@ -1,12 +1,13 @@
 #!/bin/bash
 
 # Define the base URL
-BASE_URL="https://localhost:7127"
+BASE_URL="http://localhost:5283"
 
 # Create a new breakfast
 echo "Creating a new breakfast..."
-CREATE_RESPONSE=$(curl -s -X POST "$BASE_URL/breakfasts" \
+CREATE_RESPONSE=$(curl -s -L -k -X POST "$BASE_URL/breakfasts" \
   -H "Content-Type: application/json" \
+  -H "Accept: application/json" \
   -d '{
     "name": "Vegan Sunshine",
     "description": "Vegan Sunshine",
@@ -23,8 +24,9 @@ CREATE_RESPONSE=$(curl -s -X POST "$BASE_URL/breakfasts" \
     ]
 }')
 
-echo "Create Response:"
-echo "$CREATE_RESPONSE" | jq '.'
+
+echo "Create Response (parsed):"
+echo "$CREATE_RESPONSE" | jq '.' || echo "No JSON data found in the response."
 
 # Extract the ID from the response (assuming it's returned in the response)
 BREAKFAST_ID=$(echo "$CREATE_RESPONSE" | jq -r '.id // empty')
@@ -36,7 +38,7 @@ fi
 
 # Get the created breakfast
 echo -e "\nFetching the created breakfast..."
-GET_RESPONSE=$(curl -s -X GET "$BASE_URL/Breakfasts/$BREAKFAST_ID")
+GET_RESPONSE=$(curl -s -L -k -X GET "$BASE_URL/breakfasts/$BREAKFAST_ID")
 
 echo "Get Response:"
 echo "$GET_RESPONSE" | jq '.'

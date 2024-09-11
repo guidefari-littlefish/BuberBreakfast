@@ -12,10 +12,12 @@ fi
 
 id=$1
 
-response=$(curl -s -X GET "https://localhost:7127/breakfasts/$id")
+# Updated curl command
+response=$(curl -s -L -k -X GET "https://localhost:7127/breakfasts/$id" \
+  -H "Accept: application/json")
 
 echo "Response:"
-echo "$response" | jq '.'
+echo "$response" | jq '.' 2>/dev/null
 
 # If jq fails (response is not JSON), print the raw response
 if [ $? -ne 0 ]; then
