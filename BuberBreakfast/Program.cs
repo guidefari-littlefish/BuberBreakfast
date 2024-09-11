@@ -1,6 +1,10 @@
+using BuberBreakfast.Services.Breakfasts;
+//using BuberBreakfast.Services.Breakfasts.RequestResponseLoggingMiddleware;
+
 var builder = WebApplication.CreateBuilder(args);
 {
     builder.Services.AddControllers();
+    builder.Services.AddSingleton<IBreakfastService, BreakfastService>();
 }
 
 // Add services to the container.
@@ -8,7 +12,8 @@ var builder = WebApplication.CreateBuilder(args);
 
 var app = builder.Build();
 {
-app.UseHttpsRedirection();
-app.MapControllers();
-app.Run();
+    app.UseMiddleware<RequestResponseLoggingMiddleware>();
+    app.UseHttpsRedirection();
+    app.MapControllers();
+    app.Run();
 }
