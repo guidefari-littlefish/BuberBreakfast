@@ -1,10 +1,17 @@
 using ErrorOr;
 using BuberBreakfast.Contracts.Breakfast;
+using BuberBreakfast.Services.Breakfasts;
 
 namespace BuberBreakfast.Models;
 
 public class Breakfast
 {
+    public const int MinNameLength = 3;
+    public const int MaxNameLength = 50;
+
+    public const int MinDescriptionLength = 50;
+    public const int MaxDescriptionLength = 150;
+
     public Guid Id { get; }
     public string Name { get;}
     public string Description { get;}

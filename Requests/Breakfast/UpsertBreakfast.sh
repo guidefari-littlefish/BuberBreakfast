@@ -18,10 +18,10 @@ echo "Updating breakfast with ID: $id"
 response=$(curl -s -X PUT "$BASE_URL/breakfasts/$id" \
   -H "Content-Type: application/json" \
   -d '{
-    "name": "Vegan Sunshine 2",
-    "description": "Vegan everything! Join us for a healthy breakfast..",
-    "startDateTime": "2022-04-08T08:00:00",
-    "endDateTime": "2022-04-08T11:00:00",
+    "name": "Vegan Sunshine updated",
+    "description": "Mic check one two one two",
+    "startDateTime": "2024-05-20T08:00:00",
+    "endDateTime": "2024-05-20T11:00:00",
     "savory": [
         "Oatmeal",
         "Avocado Toast",

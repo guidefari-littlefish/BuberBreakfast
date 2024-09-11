@@ -10,3 +10,5 @@ public record BreakfastResponse(
     List<string> Savory,
     List<string> Sweet
 );
+
+public record struct UpsertedBreakfast(bool IsNewlyCreated);
